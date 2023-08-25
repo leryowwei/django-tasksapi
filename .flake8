@@ -1,0 +1,7 @@
+[flake8]
+# comma-separated filename and glob patterns:
+exclude =
+    ./.*,
+    __pycache__,
+# we use a max line length of 88 to align with black
+max-line-length = 88
