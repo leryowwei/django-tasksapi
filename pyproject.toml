@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "django-taskapi"
+name = "tasks_api"
 version = "0.1.0"
 description = "Django API project to help user track their task list"
 authors = ["Yow Ler <yow_wei_1995@hotmail.com>"]
@@ -7,6 +7,7 @@ authors = ["Yow Ler <yow_wei_1995@hotmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.11"
 Django = "^4.2.4"
+djangorestframework = "^3.14.0"
 
 [tool.poetry.dev-dependencies]
 black = "^23.7.0"
@@ -40,3 +41,5 @@ check_format = ["_lint-poetry", "_lint-black", "_lint-isort", "_lint-toml-sort"]
 clean = ["_git-clean"]
 lint = ["_lint-black", "_lint-isort", "_flake"]
 pre_commit = ["check_format", "lint"]
+run_server = "python tasks/manage.py runserver"
+migrate = "python tasks/manage.py migrate"
