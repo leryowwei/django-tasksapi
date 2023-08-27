@@ -43,3 +43,4 @@ lint = ["_lint-black", "_lint-isort", "_flake"]
 pre_commit = ["check_format", "lint"]
 run_server = "python tasks/manage.py runserver"
 migrate = "python tasks/manage.py migrate"
+make_migrations = "python tasks/manage.py makemigrations"
