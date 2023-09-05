@@ -1,29 +1,10 @@
-[tool.poetry]
-name = "tasks_api"
-version = "0.1.0"
-description = "Django API project to help user track their task list"
-authors = ["Yow Ler <yow_wei_1995@hotmail.com>"]
-
-[tool.poetry.dependencies]
-python = "^3.11"
-Django = "^4.2.4"
-djangorestframework = "^3.14.0"
-
-[tool.poetry.dev-dependencies]
-black = "^23.7.0"
-isort = "^5.12.0"
-poethepoet = "^0.22.0"
-flake8 = "^6.1.0"
-autoflake = "^2.2.0"
-toml-sort = "^0.23.1"
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
 
 [tool.isort]
 profile = "black"
 skip_glob = ["**/.**"]
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
 
 [tool.poe.tasks]
 _autoflake = "autoflake --remove-all-unused-imports --remove-unused-variables --recursive --in-place ."
@@ -42,5 +23,25 @@ clean = ["_git-clean"]
 lint = ["_lint-black", "_lint-isort", "_flake"]
 pre_commit = ["check_format", "lint"]
 run_server = "python tasks/manage.py runserver"
+manage = "python tasks/manage.py"
 migrate = "python tasks/manage.py migrate"
 make_migrations = "python tasks/manage.py makemigrations"
+
+[tool.poetry]
+name = "tasks"
+version = "0.1.0"
+description = "Django API project to help user track their task list"
+authors = ["Yow Ler <yow_wei_1995@hotmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Django = "^4.2.4"
+djangorestframework = "^3.14.0"
+
+[tool.poetry.dev-dependencies]
+black = "^23.7.0"
+isort = "^5.12.0"
+poethepoet = "^0.22.0"
+flake8 = "^6.1.0"
+autoflake = "^2.2.0"
+toml-sort = "^0.23.1"
