@@ -3,7 +3,7 @@ from django.db import models
 
 
 class LowerCaseField(models.CharField):
-    """Ensure valid values will always be using just lowercase"""
+    """Ensure valid values will always be using just lowercase."""
 
     def get_prep_value(self, value: str | None) -> str | None:
         value = super().get_prep_value(value)
